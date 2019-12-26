@@ -1,5 +1,8 @@
+require 'will_paginate/view_helpers/link_renderer'
+require 'will_paginate/view_helpers/action_view'
+
 module BootstrapPaginationHelper
-  class MyLinkRenderer < WillPaginate::ActionView::LinkRenderer
+  class LinkRenderer < WillPaginate::ActionView::LinkRenderer
     protected
 
       def page_number(page)

@@ -1,1 +1,27 @@
 <title>Сдвиг субтритров | MagicSub</title>
+
+require 'net/http'
+
+# готовим uri, куда будем отправлять данные
+uri = URI 'http://example.com/upload_form'
+
+# подготавливаем новое соединение
+connection = Net::HTTP.new uri.host, uri.port
+
+# создаем объект POST-запроса
+request = Net::HTTP::Post.new uri
+
+# формируем данные
+form_data = [
+['user_avatar', File.read('kartinko.jpg'), {filename: 'picture.jpg'}], # контент файла представлен "строкой"
+['user_photo',  File.open('photo.jpg')], # контент файла представлен объектом класса File
+# другие нужные данные формы идут сюда же в этом же формате:
+['submit', 'true'],
+['user_name', 'valera']
+]
+
+# добавляем данные к запросу
+request.set_form form_data, 'multipart/form-data'
+
+# отправляем запрос
+response = connection.request request

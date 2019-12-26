@@ -14,9 +14,9 @@
   <div class="container header-container" style="box-shadow: 0 20px 20px -20px rgba(122,122,122,0.5)">
     <div class="container-inner">
       <nav class="header">
-        <a class="logo" href="<%= posts_path %>">
+        <p class="logo">
           MagicSub
-        </a>
+        </p>
 
         <% if user_signed_in? %>
           <a class="button light header-signup" href="<%= destroy_user_session_path %>" data-method="delete" style="font-size:62.5%; float:left">Выход</a>
@@ -26,7 +26,7 @@
 
         <div class="menu">
           <a data-toggle='.header'>
-            <%= link_to "Главная", posts_path, class: "home #{'active' if current_page?(manuals_path)}", style: "font-size:62.5%; margin:0 0 0 0" %>
+            <%= link_to "Главная", root_path, class: "home #{'active' if current_page?(root_path)}", style: "font-size:62.5%; margin:0 0 0 0" %>
           </a>
           <a data-toggle='.header'>
             <%= link_to "Посты", posts_path, class: "#{'active' if current_page?(posts_path)}", style: "font-size:62.5%; margin:0 0 0 0" %>
@@ -60,7 +60,18 @@
       </div>
       <div class="col-md-3" style="color: #FF7E79">
 
+        <% if user_signed_in? %>
+          <a class="button light header-signup" href="<%= new_post_path %>" style="background-color:#9437FF; color: #F7F7F7; box-shadow: -1px 1px 30px 0px rgba(148, 55, 255, 0.6)" >Создать пост</a>
+        <% end %>
 
+        <%= render "shared/submenu" %>
+
+        <div class = "tag-cloud" >
+          <h2>Теги</h2>
+          <% tag_cloud(Tag.counts, %w{tag1, tag2, tag3, tag4, tag5}) do |tag, css_class| %>
+            <%= link_to tag.name, tag_path(tag.name), class: css_class, style: "color: #797979" %>
+          <% end %>
+        </div>
 
       </div>
     </div>

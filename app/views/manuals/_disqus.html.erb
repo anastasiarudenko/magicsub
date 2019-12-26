@@ -6,7 +6,7 @@
      *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
     var disqus_config = function () {
-        this.page.url = '<%= request.base.url + request.original_fullpath %>';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.url = 'http://localhost.com<%= request.original_fullpath %>';  // Replace PAGE_URL with your page's canonical URL variable
         this.page.identifier = '<%= @manuals %>'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 

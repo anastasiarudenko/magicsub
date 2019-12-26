@@ -1,0 +1,331 @@
+h2.specified-title
+  font-size: inherit
+  margin: 0
+  font-weight: inherit
+
+.clamp
+  position: relative
+  display: -webkit-flex
+  display: flex
+  min-height: 0
+
+.clamp__text
+  -webkit-column-count: 2
+  -moz-column-count: 2
+  column-count: 2
+  width: calc(200% - 50px)
+  height: 100%
+  position: absolute
+  -webkit-column-fill: auto
+  -moz-column-fill: auto
+  column-fill: auto
+  -webkit-column-gap: 10px
+  -moz-column-gap: 10px
+  column-gap: 10px
+  -webkit-column-rule: none
+  -moz-column-rule: none
+  column-rule: none
+
+.zen-page._browser-base_safari .clamp__text
+  h2, span
+    display: inline-block
+
+.clamp__wrapper
+  position: absolute
+  width: 100%
+  height: 100%
+  padding: 0 20px 0 0
+  overflow: hidden
+  box-sizing: content-box
+
+.clamp__text-expand
+  visibility: hidden
+  -webkit-flex-shrink: 0
+  flex-shrink: 0
+  width: 100%
+
+.clamp__visible-tokens._ellipsis:after
+  content: "\2026"
+  position: absolute
+
+.clamp__invisible-tokens
+  visibility: hidden
+
+.clamp__spacer
+  display: none
+  width: 1300px
+  height: 1300px
+
+.card-channel-name
+  font-family: sans-serif
+  font-weight: 700
+  -webkit-font-smoothing: antialiased
+  max-height: 28px
+  overflow: hidden
+  opacity: .6
+  text-transform: uppercase
+  text-align: left
+  line-height: 1.35em
+
+  &._size_small
+    font-size: .6875em
+    letter-spacing: .8px
+    display: -webkit-box
+    -webkit-line-clamp: 2
+    -webkit-box-orient: vertical
+    word-wrap: break-word
+    overflow-wrap: break-word
+
+.card-controls-container__item:not(._is-mobile):not(:hover)._mode_unfocused
+  opacity: 0.3
+
+.card-title
+  font-family: sans-serif
+  font-weight: 700
+  -webkit-font-smoothing: antialiased
+  z-index: 8
+  max-height: 100%
+  -webkit-flex: 0 0 auto
+  flex: 0 0 auto
+  word-wrap: break-word
+  word-break: break-word
+
+  &._is-desktop._font-size_3
+    font-size: 18px
+    line-height: 22px
+
+.card-channel-link
+  height: 100%
+  max-width: 100%
+  display: -webkit-flex
+  display: flex
+  -webkit-flex-direction: row
+  flex-direction: row
+  -webkit-align-items: center
+  align-items: center
+  color: inherit
+
+.card-image-view
+  position: relative
+  display: block
+  overflow: hidden
+  width: 100%
+  height: 100%
+  cursor: pointer
+  text-align: left
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  pointer-events: none
+  z-index: 1
+
+  &._is-desktop
+    border-radius: 4px
+
+.zen-page._browser-base_safari .card-image-view._is-desktop
+  -webkit-transform: translateZ(0)
+  transform: translateZ(0)
+
+.card-image-view:hover .card-hover
+  opacity: .4
+  transition: opacity 0.1s ease-out
+
+.card-image-view__clickable
+  z-index: 7
+  display: block
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  text-decoration: none
+  pointer-events: auto
+  cursor: pointer
+
+.card-image-view._with-shadows
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15)
+
+.blur-image, .blur-image__wrap
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+
+.blur-image__image
+  position: relative
+  transition: opacity .3s ease-in-out
+  opacity: 0
+
+  &._is-loaded
+    opacity: 1
+
+  &._mode_bci
+    width: 100%
+    height: 100%
+    background-position: 0 -20px
+    background-size: 100% auto
+    background-repeat: no-repeat
+
+.blackout-filter
+  display: none
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  pointer-events: none
+  z-index: 5
+  background-color: rgba(0, 0, 0, 0.05)
+
+._theme_white .blackout-filter
+  display: block
+
+.card-hover
+  z-index: 6
+  opacity: 0
+
+.card-content, .card-hover
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+
+.card-content
+  z-index: auto
+  box-sizing: border-box
+  display: -webkit-flex
+  display: flex
+  -webkit-flex-direction: column
+  flex-direction: column
+
+.card-content__text-content
+  z-index: 8
+  -webkit-flex: 1 1 0px
+  flex: 1 1 0px
+  min-height: 0
+
+.card-content__text
+  position: relative
+  z-index: 8
+  opacity: .7
+  font-size: .875em
+  line-height: 1.43em
+  padding-top: 8px
+  margin: 0
+  width: 100%
+
+.card-content__footer
+  display: -webkit-flex
+  display: flex
+  -webkit-flex: 0 0 auto
+  flex: 0 0 auto
+  -webkit-flex-direction: row
+  flex-direction: row
+  -webkit-flex-wrap: nowrap
+  flex-wrap: nowrap
+  -webkit-justify-content: space-between
+  justify-content: space-between
+
+.card-content__source
+  transition: -webkit-transform .2s ease-out
+  transition: transform .2s ease-out
+  transition: transform .2s ease-out, -webkit-transform .2s ease-out
+  -webkit-flex: 1 1 0px
+  flex: 1 1 0px
+  min-width: 0
+  z-index: 8
+
+.card-content__source-name
+  z-index: 10
+  display: -webkit-flex
+  display: flex
+  -webkit-align-items: center
+  align-items: center
+
+.card-content
+  &._render-type_blur
+    .card-content__text-content
+      display: -webkit-flex
+      display: flex
+      -webkit-flex-direction: column
+      flex-direction: column
+      -webkit-justify-content: flex-start
+      justify-content: flex-start
+
+    .card-content__text
+      -webkit-flex: 1 1 auto
+      flex: 1 1 auto
+
+  &._is-desktop
+    padding: 0 23px 12px
+
+    .card-content__text-content
+      padding-bottom: 12px
+
+    .card-content__footer
+      height: 32px
+
+    .card-content__source-name
+      height: 32px
+      margin-right: 10px
+
+    &._size_small
+      &._render-type_blur
+        margin-top: 130px
+
+        .card-content__text-content
+          transition: -webkit-transform .2s ease-out
+          transition: transform .2s ease-out
+          transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out
+
+      .card-content__text, .card-title
+        transition: -webkit-transform .2s ease-out
+        transition: transform .2s ease-out
+        transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out
+
+.feed
+  display: -webkit-flex
+  display: flex
+  -webkit-flex-direction: column
+  flex-direction: column
+  margin: auto
+  white-space: normal
+  font-size: 16px
+
+  &._column-count_3
+    width: 958px
+
+  &._is-morda-desktop
+    width: 100%
+
+.feed__item-wrap
+  margin-right: 8px
+  width: 340px
+  min-width: 0
+
+  &:last-child
+    margin-right: 0
+
+.feed__item
+  width: 100%
+  height: 320px
+
+.feed._column-count_3 .feed__item-wrap._size_small
+  width: 314px
+
+.feed__row
+  display: -webkit-flex
+  display: flex
+  -webkit-flex-direction: row
+  flex-direction: row
+  margin-bottom: 8px
+
+.feed__item
+  position: relative
+  box-sizing: border-box
+
+.feed._is-morda-desktop .feed__item
+  height: 316px

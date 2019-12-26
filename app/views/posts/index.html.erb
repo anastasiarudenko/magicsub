@@ -1,0 +1,7 @@
+<h1><%= t('.title') %></h1>
+
+<section id='posts'>
+  <%= render @posts.reverse %>
+</section>
+
+<%= will_paginate @posts, renderer: 'BootstrapPaginationHelper::LinkRenderer' %>

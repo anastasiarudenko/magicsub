@@ -120,11 +120,12 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'magicsub.herokuapp.com', :protocol => 'http' }
 
   config.action_mailer.smtp_settings = {
-      address:              'smtp.gmail.com',
-      port:                 587,
-      domain:               'gmail.com',
-      user_name:            'magsubtitle@gmail.com',
-      password:             'mixQot-bavpiq-mojhy5',
-      authentication:       'plain'
+      :address   => "smtp.gmail.com",
+      :port      => 587,
+      :enable_starttls_auto => true,
+      :user_name => "magsubtitle",
+      :password  => "mixQot-bavpiq-mojhy5",
+      :authentication => 'login',
+      :domain => 'gmail.com',
   }
 end

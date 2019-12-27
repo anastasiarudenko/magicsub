@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module Untitled
   class Application < Rails::Application
+    include ActiveSupport::LoggerSilence
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 

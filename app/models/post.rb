@@ -5,9 +5,8 @@ class Post < ApplicationRecord
   has_many :tags, through: :taggings
   belongs_to :category
 
-  validates :title, presence: true #проверка на непустое значение
-  validates :preview, :body
-
+  validates :title, presence: true
+  validates :preview, :body, presence: false  #проверка на непустое значение
 
   def all_tags
     self.tags.map(&:name).join(', ')

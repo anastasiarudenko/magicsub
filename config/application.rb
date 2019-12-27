@@ -4,7 +4,7 @@ require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
-ActiveSupport::LoggerSilence
+Bundler.require(ActiveSupport::LoggerSilence)
 
 module Untitled
   class Application < Rails::Application

@@ -111,15 +111,20 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
-  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { :host => 'magicsub.heroku.com' }
-   ActionMailer::Base.smtp_settings = {
-      :address    => "smtp.sendgrid.net",
-      :port       => 25,
-      :user_name  => ENV['SENDGRID_USERNAME'],
-      :password   => ENV['SENDGRID_PASSWORD'],
-      :domain     => ENV['SENDGRID_DOMAIN'],
-      :authentication  => :plain
+
+  config.action_mailer.perform_deliveries = true
+
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.default_url_options = { :host => 'magicsub.herokuapp.com', :protocol => 'http' }
+
+  config.action_mailer.smtp_settings = {
+      address:              'smtp.gmail.com',
+      port:                 587,
+      domain:               'gmail.com',
+      user_name:            'magsubtitle@gmail.com',
+      password:             'mixQot-bavpiq-mojhy5',
+      authentication:       'plain'
   }
 end

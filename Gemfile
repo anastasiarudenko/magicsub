@@ -36,9 +36,6 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'ancestry'
 gem 'devise'
 gem 'rails_12factor', group: :production
-gem "refile", require: "refile/rails", github: 'manfe/refile'
-gem "refile-mini_magick"
-gem "refile-s3", '~> 0.2.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

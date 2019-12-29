@@ -7,6 +7,7 @@ ru:
         title: 'Название'
         preview: 'Превью'
         body: 'Содержание'
+        Category: 'Категория'
         all_tags: 'Теги'
       category:
         name: 'Название'

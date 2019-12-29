@@ -1,22 +1,21 @@
 class ShiftsController < ApplicationController
-  def index
 
+  before_action :set_shift, only: [:show]
+  def index
+    @shift = Shift.new
   end
 
   def show
   end
 
-  def new
-    @shift = Shift.new
-  end
-
   def create
     @shift = Shift.new(shift_params)
+
     if @shift.save
-      redirect_to @shift, success: 'Статья успешно создана'
+      redirect_to @shift
     else
-      flash.now[:danger] = 'Статья не создана'
-      render :new
+      flash.now[:danger] = 'Субтитры не загружены'
+      render :index
     end
   end
 
@@ -30,6 +29,15 @@ class ShiftsController < ApplicationController
       flash.now[:danger] = 'Статья не обновлена'
       render :edit
     end
+  end
+
+  def destroy
+    @shift.destroy
+    redirect_to shifts_path
+  end
+
+  def set_shift
+    @shift = Shift.find(params[:id])
   end
 
   def shift_params

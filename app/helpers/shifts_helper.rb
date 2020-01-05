@@ -15,10 +15,11 @@ module ShiftsHelper
         lines[n][17..24] = time.strftime('%H:%M:%S')
       end
     end
+
     @shift.result = @shift.file.to_s.chomp(".srt") + "_new.srt"
-    a = "public" + @shift.file.to_s.chomp(".srt") + "_new.srt"
-    a = "public" + @shift.file.to_s
-    File.open(Rails.root + a, 'w') { |file| lines.each { |x| file.puts(x) } }
+    a = "public" + @shift.result.to_s
+    # a = "public" + @shift.file.to_s
+    File.open(a, 'a') { |file| lines.each { |x| file.puts(x) } }
   end
 end
 

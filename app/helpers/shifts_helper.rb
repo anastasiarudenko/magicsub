@@ -18,7 +18,7 @@ module ShiftsHelper
     @shift.result = @shift.file.to_s.chomp(".srt") + "_new.srt"
     a = "public" + @shift.file.to_s.chomp(".srt") + "_new.srt"
     a = "public" + @shift.file.to_s
-    File.open(a, 'w') { |file| lines.each { |x| file.puts(x) } }
+    File.open(Rails.root + a, 'w') { |file| lines.each { |x| file.puts(x) } }
   end
 end
 

@@ -21,7 +21,7 @@
   </section>
 
   <section class="post-body">
-    <%= image_tag @post.image.url(:large), class: 'img-show' if @post.image? %>
+    <a href="<%= @post.image %>" download>Файл</a>
     <%= @post.body %>
   </section>
 </article>

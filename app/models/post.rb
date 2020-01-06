@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
 
-  mount_uploader :image, ImageUploader
+  mount_uploader :image, MyUploader
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
   belongs_to :category

@@ -17,7 +17,9 @@
   </section>
 
   <section class="post-preview clearfix">
-    <%= image_tag post.image.url(:thumb), class: 'img-thumbnail thumb' if post.image? %>
+    <% if post.image? %>
+      <a href="<%= post.image %>" download>Файл</a>
+    <% end %>
     <%= post.preview %>
   </section>
 

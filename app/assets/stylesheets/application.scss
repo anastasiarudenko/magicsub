@@ -20,8 +20,17 @@ A {
 }
 a:hover {
   color: #941100;
+  text-decoration: none;
 }
 code {
   color: #009051;
   background-color: #EBEBEB;
+}
+
+a.linkmy {
+  color: #9437FF;
+}
+a.linkmy:hover {
+  color: #FF8AD8;
+  text-decoration: none;
 }

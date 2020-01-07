@@ -9,16 +9,21 @@
   </div>
 
   <div class="form-group">
-    <%= f.submit ('Загрузить'), class: 'btn btn-primary' %>
-
+    <%= f.submit ('Сдвинуть'), class: 'btn btn-primary' %>
   </div>
 <% end %>
 
-<p>Совет</p>
+<div class="warning">
 
-<p>Если происходят страшные вещи с кодировками (Вы стали видеть непонятные символы в файле) или появляется ошибка, то</p>
+  <div class="bodymovin" style="width: 9%; margin: 0 auto" data-icon="<%= asset_path("warning.json")%>"></div>
 
-<ul>
-  <li><p>Убедитесь, что Вы загружаете субтитры SubRip (расширение <code>.srt</code>)</p></li>
-  <li><p>Попробуйте потворить магию с кодировками <a href="http://foxtools.ru/Text">здесь</a> </p></li>
-</ul>
+  <p> </p>
+
+  <p>Если происходят страшные вещи с кодировками (Вы стали видеть непонятные символы в файле) или появляется ошибка, то</p>
+
+  <ul>
+    <li><p>Убедитесь, что Вы загружаете субтитры SubRip (расширение <code>.srt</code>)</p></li>
+    <li><p>Попробуйте потворить магию с кодировками <a href="http://foxtools.ru/Text">здесь</a> </p></li>
+  </ul>
+
+</div>

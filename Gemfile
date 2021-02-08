@@ -30,7 +30,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'pg', '~> 0.18'
 gem 'bootstrap', '~> 4.3.1'
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 gem "mini_magick"
 gem 'will_paginate', '~> 3.1.0'
 gem 'ancestry'
